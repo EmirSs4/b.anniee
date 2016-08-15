@@ -1,4 +1,15 @@
 if GetObjectName(GetMyHero()) ~= "Annie" then return end
+local ver = "0.14"
+
+function AutoUpdate(data)
+    if tonumber(data) > tonumber(ver) then
+        PrintChat("New version found! " .. data)
+        PrintChat("Downloading update, please wait...")
+        DownloadFileAsync("https://raw.githubusercontent.com/EmirSs4/b.anniee/master/annie.lua", SCRIPT_PATH .. "b.anniee.lua", function() PrintChat("Update Complete, please 2x F6!") return end)
+    else
+        PrintChat("No updates found!")
+    end
+end
 
 
 require("OpenPredict")	
@@ -109,4 +120,4 @@ end
 end
 end)
 
-print("Annie loaded lyý oyunlar Good Game")
+print("Annie loaded lyÃ½ oyunlar Good Game")
